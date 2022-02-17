@@ -5,11 +5,53 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        .titulo{
+            font-size: 30pt;
+        }
+    </style>
 </head>
 <body>
-    <h1>Bem vindo ao GitHub</h1>
-    <hr>
-    <h2>Essa linha foi alterada</h2>
+    <h1 class="titulo">Bem vindo ao GitHub</h1>
     <h1 style="color: red; background-color: black; font-weight: bold;">Amigos do fazola ❤️!</h1>
+    <hr>
+    <h1 class="titulo">CONVERSOR DE MEDIDAS: MILHAS - KM</h1>
+    
+    <label>
+        Quantidade de milhas<br><input id="milhas" type="text">
+    </label>
+
+    <input id="botao1" type="submit" value="Calcular">
+
+    <label>
+        <br><br><br>Quantidade de quilometros<br><input id="km" type="text">
+    </label>
+
+    <input id="botao2" type="submit" value="Calcular">
+
+    <script>
+        var milhas
+        var botao1
+        var km
+        var botao2
+        window.onload = function incial(){
+            milhas = document.getElementById("milhas")
+            botao1 = document.getElementById("botao1")
+            botao1.addEventListener("click", mtokm)
+            km = document.getElementById("km")
+            botao1 = document.getElementById("botao2")
+            botao1.addEventListener("click", kmtom)
+        }
+
+        function mtokm(){
+            const resultadomkm = Number(milhas.value) * 1.609
+            window.alert(`O resultado da conversão de ${milhas.value} milhas para km é ${resultadomkm.toFixed(2)} km `)
+        }
+
+        function kmtom(){
+            const resultadokmm = Number(km.value) / 1.609
+            window.alert(`O resultado da conversão de ${km.value} km para milhas é ${resultadokmm.toFixed(2)} milhas `)
+        }
+    </script>
 </body>
 </html>
